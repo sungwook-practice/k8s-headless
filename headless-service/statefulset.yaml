@@ -5,7 +5,7 @@ metadata:
   labels:
     app: echo-headless
 spec:
-  serviceName: "echo"
+  serviceName: "echo-headless"
   replicas: 3
   selector:
     matchLabels:
