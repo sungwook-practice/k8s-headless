@@ -3,10 +3,10 @@
 
 # 실행방법
 ```sh
-kubectl kustomize ./ | kubectl apply -
+kubectl apply -k ./
 ```
 
 # 삭제 방법
 ```sh
-kubectl kustomize ./ | kubectl delete -
+kubectl delete -k ./
 ```
