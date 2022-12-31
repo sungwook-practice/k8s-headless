@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-example2
+  name: echo-normal
   namespace: default
 spec:
   selector:
-    app: nginx-example2
+    app: echo-normal
   type: ClusterIP
   ports:
-    - name: nginx-example2
+    - name: echo-normal
       protocol: TCP
       port: 80
       targetPort: 80

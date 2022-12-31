@@ -1,28 +1,21 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: nginx-headless
+  name: echo-headless
 spec:
-  serviceName: "nginx"
+  serviceName: "echo"
   replicas: 3
   selector:
     matchLabels:
-      app: nginx-headless
+      app: echo-headless
   template:
     metadata:
       labels:
-        app: nginx-headless
+        app: echo-headless
     spec:
-      volumes:
-        - name: static-files
-          configMap:
-            name: static-files
       containers:
         - name: nginx
-          image: nginx:1.21
-          volumeMounts:
-            - name: static-files
-              mountPath: /usr/share/nginx/html
+          image: ealen/echo-server
           resources:
             requests:
               cpu: 50m

@@ -1,30 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-example2
+  name: echo-normal
   namespace: default
   labels:
-    app: nginx-example2
+    app: echo-normal
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx-example2
+      app: echo-normal
   template:
     metadata:
       labels:
-        app: nginx-example2
+        app: echo-normal
     spec:
-      volumes:
-        - name: static-files
-          configMap:
-            name: static-files
       containers:
-        - name: nginx
-          image: nginx
-          volumeMounts:
-            - name: static-files
-              mountPath: /usr/share/nginx/html
+        - name: main
+          image: ealen/echo-server
           ports:
             - containerPort: 80
               name: web
