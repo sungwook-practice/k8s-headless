@@ -1,0 +1,12 @@
+kind: Service
+metadata:
+  name: nginx-headless
+  labels:
+    app: nginx-headless
+spec:
+  clusterIP: None
+  selector:
+    app: nginx-headless
+  ports:
+    - port: 80
+      name: web

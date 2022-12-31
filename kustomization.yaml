@@ -1,0 +1,4 @@
+resources:
+  - headless-service/
+  - service/
+  - netshoot.yaml
