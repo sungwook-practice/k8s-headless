@@ -1,5 +1,6 @@
 # 개요
 * kubernetes headless 서비스 테스트
+* 유투브 영상: https://youtu.be/If03sN4isO4
 
 # 실행방법
 * steatefulset storageClassName 수정
