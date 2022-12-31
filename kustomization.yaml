@@ -1,4 +1,5 @@
 resources:
+  - configmap.yaml
   - headless-service/
   - service/
   - netshoot.yaml

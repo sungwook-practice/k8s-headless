@@ -15,9 +15,16 @@ spec:
       labels:
         app: nginx-example2
     spec:
+      volumes:
+        - name: static-files
+          configMap:
+            name: static-files
       containers:
         - name: nginx
           image: nginx
+          volumeMounts:
+            - name: static-files
+              mountPath: /usr/share/nginx/html
           ports:
             - containerPort: 80
               name: web

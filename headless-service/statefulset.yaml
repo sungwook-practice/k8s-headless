@@ -13,9 +13,16 @@ spec:
       labels:
         app: nginx-headless
     spec:
+      volumes:
+        - name: static-files
+          configMap:
+            name: static-files
       containers:
         - name: nginx
           image: nginx:1.21
+          volumeMounts:
+            - name: static-files
+              mountPath: /usr/share/nginx/html
           resources:
             requests:
               cpu: 50m

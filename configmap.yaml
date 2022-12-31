@@ -1,0 +1,6 @@
+kind: ConfigMap
+metadata:
+  name: static-files
+data:
+  index.html: |
+    echo "$(hostname)"
